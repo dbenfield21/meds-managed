@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Med List</h1>
+  {% comment %} <img src="{% static 'images/' %}" alt="" /> {% endcomment %}
+
+</section>
+
+<section class="card-container">
+  {% for med in meds %}
+    <div class="card">
+      <div class="card-content">
+        <div class="card-img-container">
+          <img
+          >
+        </div>
+        <h2 class="card-title">{{ med.name }}</h2>
+        <p><small>{{ med.dose }}</small></p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

@@ -1,8 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Med 
 
 # Create your views here.
 
-from django.http import HttpResponse
+
 
 def home(request):
-  return HttpResponse('<h1>Hello ᓚᘏᗢ</h1>')
+  return render(request, 'home.html')
+
+def about(request):
+  return render(request, 'about.html')
+
+
+def meds_index(request):
+  meds = Med.objects.all()
+  return render(request, 'meds/index.html', {'meds': meds})
