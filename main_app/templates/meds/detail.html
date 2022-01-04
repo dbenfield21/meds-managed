@@ -27,6 +27,10 @@
         <p> Notes: {{ med.notes }}</p>
         <p> Taken: {{ med.taken }}</p>
         <p> This med was added on: {{med.created }}</p>
+        <div class="med-actions">
+          <a href="{% url 'meds_update' med.id %}" class="btn warn">Edit</a>
+          <a href="{% url 'meds_delete' med.id %}" class="btn danger">Delete</a>
+        </div>
 
       </div>
       </a>

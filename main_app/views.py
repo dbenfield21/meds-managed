@@ -29,4 +29,12 @@ class MedCreate (CreateView):
   fields = ['name', 'dose', 'notes', 'taken']
   success_url = '/meds/'
 
+class MedUpdate (UpdateView):
+  model = Med
+  fields = ['name', 'dose', 'notes', 'taken']
+  
+class MedDelete (DeleteView):
+  model = Med
+  success_url = '/meds/'
+  
 
