@@ -24,10 +24,10 @@ body {
   align-items: center;
   font-family: 'Indie Flower', cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   min-height: 100vh;
-  --nav-bg: rgb(242,100,100);
+  --nav-bg: rgb(101,160,249);
   --borders: rgb(2, 2, 44) solid 2px;
   --text-color: rgb(2, 2, 44);
-  --link-hover-color: rgb(101,160,249);
+  --link-hover-color: rgb(220,82,82);
   --button-bg: rgb(245, 245, 245);
   --button-bg-hover: grey;
   --submit: rgb(220,82,82);
@@ -51,6 +51,7 @@ body {
   align-items: left;
   justify-self: flex-start;
   font-size: larger;
+  padding-right: 10px;
 }
 
 .pill:hover {

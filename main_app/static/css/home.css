@@ -4,6 +4,11 @@ main {
   justify-content: center;
   flex-wrap: wrap;
   height: 100%;
+  /* overflow: hidden; */
+}
+
+.home-image {
+  /* height: 450px; */
 }
 
 main > section {
@@ -17,8 +22,10 @@ main > section {
 
 h1 {
   font-size: 40px;
+  padding: 0px;
+  color: rgb(220,82,82);
+  text-emphasis: bold;
 }
-
 
 .header-logo-container {
   display: none;

@@ -73,7 +73,7 @@
 }
 
 .med-details p {
-  font-size: var(--font-reg);
+  font-size: var(--font-l);
   margin: 5px 0;
 }
 
@@ -89,7 +89,7 @@
 .subsection-content p,
 .subsection-content input,
 .subsection-content select {
-  font-size: var(--font-l);
+  font-size: var(--font-xxl);
 }
 
 .subsection-content input,
