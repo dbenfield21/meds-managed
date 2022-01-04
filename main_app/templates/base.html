@@ -24,10 +24,18 @@
     </div>
     <nav>
       <ul>
+        {% if user.is_authenticated %}
         <li class="pill" > <a href="{% url 'home' %}"> 💊</a> </li>
         <li><a href="{% url 'meds_create' %}">Add Med</a></li>
         <li><a href="{% url 'meds_index' %}">My Meds</a></li>
         <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'logout' %}">Log out</a></li>
+          {% else %}
+            <li class="pill" > <a href="{% url 'home' %}"> 💊</a> </li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'home' %}">Login</a></li>
+          {% endif %}
       </ul>
     </nav>
   </header>
