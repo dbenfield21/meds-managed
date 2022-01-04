@@ -30,7 +30,7 @@ td > * {
 
 td > textarea {
   height: calc(4 * var(--font-l) + 8px);
-  font-family: inherit;
+  font-family: 'Indie Flower', cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .btn {

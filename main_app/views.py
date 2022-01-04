@@ -32,6 +32,7 @@ class MedCreate (CreateView):
 class MedUpdate (UpdateView):
   model = Med
   fields = ['name', 'dose', 'notes', 'taken']
+  success_url = '/meds/'
   
 class MedDelete (DeleteView):
   model = Med

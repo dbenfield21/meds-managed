@@ -2,25 +2,43 @@
 {% load static %}
 
 {% block head %}
+
+
+<link 
+  href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
+  rel="stylesheet" 
+/>
+<script 
+  src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
+>
+</script>
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/detail.css' %}" 
+/>
+
+<script defer src="{% static 'js/med-detail.js' %}"></script>
+
 <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
+
+
 {% endblock %}
 
 {% block content %}
 
 <div class="page-header">
-  <h1>Add Med</h1>
-{% comment %} 
-  Leaving the action empty makes the form post to the same url used to display it
-{% endcomment %}
+  {% if object %}
+    <h1>Edit {{object.name}} </h1>
+  {% else %}
+    <h1>Add Med</h1>
+  {% endif %}
+
 <form action="" method="post" class="form-container">
-  {% comment %} 
-    Django requires the following for security purposes
-  {% endcomment %}
+  
   {% csrf_token %}
   <table>
-    {% comment %}
-      Render the inputs inside of <tr>s & <td>s
-    {% endcomment %}
+    
     {{ form.as_table }}
   </table>
   <button type="submit" class="btn submit">Add</button>
