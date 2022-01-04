@@ -22,7 +22,11 @@
           >
         </div>
         <h2 class="card-title">{{ med.name }}</h2>
-        <p><small>{{ med.dose }}</small></p>
+        <p>{{ med.dose }}</p>
+        <p>Notes: {{ med.notes }}</p>
+        <p> Taken: {{ med.taken }}</p>
+        <p> This med was added on: {{med.created }}</p>
+
       </div>
     </div>
   {% endfor %}

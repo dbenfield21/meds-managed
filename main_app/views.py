@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView
 from .models import Med 
 
 # Create your views here.
-
 
 
 def home(request):
@@ -15,3 +15,4 @@ def about(request):
 def meds_index(request):
   meds = Med.objects.all()
   return render(request, 'meds/index.html', {'meds': meds})
+
