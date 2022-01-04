@@ -16,6 +16,7 @@
 <section class="card-container">
   {% for med in meds %}
     <div class="card">
+      <a href="/meds/{{ med.id }}">
       <div class="card-content">
         <div class="card-img-container">
           <img
@@ -28,8 +29,8 @@
         <p> This med was added on: {{med.created }}</p>
 
       </div>
+      </a>
     </div>
   {% endfor %}
 </section>
-
 {% endblock %}
