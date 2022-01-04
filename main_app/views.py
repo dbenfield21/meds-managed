@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Med 
 
 # Create your views here.
@@ -16,9 +17,9 @@ def meds_index(request):
   meds = Med.objects.all()
   return render(request, 'meds/index.html', {'meds': meds})
 
-def meds_details(request):
-  meds = Med.objects.get(id=med_id)
-  return render(request, 'meds/detail.html', {"meds": meds})
+def meds_detail(request, med_id):
+  med = Med.objects.get(id=med_id)
+  return render(request, 'meds/detail.html', {"med": med})
 
 
 
