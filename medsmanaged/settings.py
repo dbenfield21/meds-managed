@@ -130,3 +130,9 @@ LOGIN_URL = "home"
 
 LOGIN_REDIRECT_URL = 'meds_index'
 LOGOUT_REDIRECT_URL = 'home'
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
+
+DEBUG_PROPAGATE_EXCEPTIONS = True
