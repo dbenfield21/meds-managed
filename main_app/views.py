@@ -6,6 +6,8 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from .models import Med 
 
@@ -18,16 +20,18 @@ class Home(LoginView):
 def about(request):
   return render(request, 'about.html')
 
-
+@login_required
 def meds_index(request):
-  meds = Med.objects.all()
+  meds = Med.objects.filter(user=request.user)
   return render(request, 'meds/index.html', {'meds': meds})
 
+@login_required
 def meds_detail(request, med_id):
   med = Med.objects.get(id=med_id)
   return render(request, 'meds/detail.html', {"med": med})
 
-class MedCreate (CreateView):
+
+class MedCreate (LoginRequiredMixin, CreateView):
   model = Med
   fields = ['name', 'dose', 'notes', 'taken']
   success_url = '/meds/'
@@ -35,12 +39,14 @@ class MedCreate (CreateView):
     form.instance.user = self.request.user  
     return super().form_valid(form)
 
-class MedUpdate (UpdateView):
+
+class MedUpdate (LoginRequiredMixin, UpdateView):
   model = Med
   fields = ['name', 'dose', 'notes', 'taken']
   success_url = '/meds/'
   
-class MedDelete (DeleteView):
+
+class MedDelete (LoginRequiredMixin, DeleteView):
   model = Med
   success_url = '/meds/'
   

@@ -19,20 +19,40 @@
       <a href="{% url 'meds_detail' med.id %}">
       <div class="card-content">
         <div class="card-img-container">
-          <img
-            {% comment %} src="{% static 'images/' %}" 
-            alt="" {% endcomment %}
-          >
         </div>
         <h2 class="card-title">{{ med.name }}</h2>
         <p>{{ med.dose }}</p>
         <p> Notes: {{ med.notes }}</p>
         <p> Taken: {{ med.taken }}</p>
-        <p> This med was added on: {{med.created }}</p>
+        <p> This med was added on: {{med.created }}</p>  
 
       </div>
       </a>
     </div>
-  {% endfor %}
-</section>
+  {% endfor %} 
+</section> 
+
+{% comment %} <table>
+  <tr>
+    <th> Med </th>
+  </tr>
+  {% for med in meds %}
+  <tr>
+    <td>
+      {{med.name}}
+    </td>
+    <td>
+      {{med.dose}}
+    </td>
+    <td>
+      {{med.notes}}
+    </td>
+  </tr>
+    {% empty %}
+    <h2>No Meds added</h2>
+
+</table>
+{% endfor %} {% endcomment %}
+
+
 {% endblock %}
