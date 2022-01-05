@@ -12,7 +12,7 @@
   
 <p>&nbsp;</p>
 
-## About Meds Managed
+## About Meds Managed:
 
 I created Meds Managed as a tool to help patients track their medications. 
 
