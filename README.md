@@ -7,7 +7,7 @@
 <p>&nbsp;</p>
 
 
-## Check out _[Meds Managed](https://invibe-tipsy-t.herokuapp.com/)_ here!
+## Check out _[Meds Managed](https://medsmanaged.herokuapp.com/)_ here!
 
   
 <p>&nbsp;</p>
